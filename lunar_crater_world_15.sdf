@@ -1,0 +1,208 @@
+<?xml version="1.0" ?>
+<sdf version="1.9">
+<world name="lunar_crater_15">
+  
+  <!-- Lighting -->
+  <light type="directional" name="sun">
+    <pose>0 0 50 0 0 0</pose>
+    <diffuse>0.7 0.7 0.7 1</diffuse>
+    <direction>0 0 -1</direction>
+    <cast_shadows>true</cast_shadows>
+  </light>
+
+  <!-- Lunar Surface (40x40m as per proposal) -->
+  <model name="lunar_surface">
+    <static>true</static>
+    <link name="link">
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size>40 40 0.2</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>40 40 0.2</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.4 0.4 0.4 1</ambient>
+          <diffuse>0.6 0.6 0.6 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+        </material>
+      </visual>
+    </link>
+  </model>
+  
+  <!-- 15 CRATERS (as per proposal: 15-20 craters) -->
+  <!-- Crater sizes: 5-10m diameter (2.5-5m radius) as per proposal -->
+  
+  <model name="crater_1">
+    <pose>8 6 0.1 0 0 0</pose>
+    <static>true</static>
+    <link name="link">
+      <visual name="visual">
+        <geometry><sphere><radius>3.5</radius></sphere></geometry>
+        <material><ambient>0.2 0.2 0.2 1</ambient><diffuse>0.3 0.3 0.3 1</diffuse></material>
+      </visual>
+    </link>
+  </model>
+  
+  <model name="crater_2">
+    <pose>-7 5 0.1 0 0 0</pose>
+    <static>true</static>
+    <link name="link">
+      <visual name="visual">
+        <geometry><sphere><radius>4.0</radius></sphere></geometry>
+        <material><ambient>0.25 0.25 0.25 1</ambient><diffuse>0.35 0.35 0.35 1</diffuse></material>
+      </visual>
+    </link>
+  </model>
+  
+  <model name="crater_3">
+    <pose>5 -8 0.1 0 0 0</pose>
+    <static>true</static>
+    <link name="link">
+      <visual name="visual">
+        <geometry><sphere><radius>3.0</radius></sphere></geometry>
+        <material><ambient>0.15 0.15 0.15 1</ambient><diffuse>0.25 0.25 0.25 1</diffuse></material>
+      </visual>
+    </link>
+  </model>
+  
+  <model name="crater_4">
+    <pose>-5 -6 0.1 0 0 0</pose>
+    <static>true</static>
+    <link name="link">
+      <visual name="visual">
+        <geometry><sphere><radius>4.5</radius></sphere></geometry>
+        <material><ambient>0.3 0.3 0.3 1</ambient><diffuse>0.4 0.4 0.4 1</diffuse></material>
+      </visual>
+    </link>
+  </model>
+  
+  <model name="crater_5">
+    <pose>12 0 0.1 0 0 0</pose>
+    <static>true</static>
+    <link name="link">
+      <visual name="visual">
+        <geometry><sphere><radius>3.8</radius></sphere></geometry>
+        <material><ambient>0.2 0.2 0.2 1</ambient><diffuse>0.3 0.3 0.3 1</diffuse></material>
+      </visual>
+    </link>
+  </model>
+  
+  <model name="crater_6">
+    <pose>-10 8 0.1 0 0 0</pose>
+    <static>true</static>
+    <link name="link">
+      <visual name="visual">
+        <geometry><sphere><radius>2.8</radius></sphere></geometry>
+        <material><ambient>0.18 0.18 0.18 1</ambient><diffuse>0.28 0.28 0.28 1</diffuse></material>
+      </visual>
+    </link>
+  </model>
+  
+  <model name="crater_7">
+    <pose>0 12 0.1 0 0 0</pose>
+    <static>true</static>
+    <link name="link">
+      <visual name="visual">
+        <geometry><sphere><radius>4.2</radius></sphere></geometry>
+        <material><ambient>0.22 0.22 0.22 1</ambient><diffuse>0.32 0.32 0.32 1</diffuse></material>
+      </visual>
+    </link>
+  </model>
+  
+  <model name="crater_8">
+    <pose>10 -10 0.1 0 0 0</pose>
+    <static>true</static>
+    <link name="link">
+      <visual name="visual">
+        <geometry><sphere><radius>3.2</radius></sphere></geometry>
+        <material><ambient>0.19 0.19 0.19 1</ambient><diffuse>0.29 0.29 0.29 1</diffuse></material>
+      </visual>
+    </link>
+  </model>
+  
+  <model name="crater_9">
+    <pose>-12 -4 0.1 0 0 0</pose>
+    <static>true</static>
+    <link name="link">
+      <visual name="visual">
+        <geometry><sphere><radius>4.8</radius></sphere></geometry>
+        <material><ambient>0.35 0.35 0.35 1</ambient><diffuse>0.45 0.45 0.45 1</diffuse></material>
+      </visual>
+    </link>
+  </model>
+  
+  <model name="crater_10">
+    <pose>6 14 0.1 0 0 0</pose>
+    <static>true</static>
+    <link name="link">
+      <visual name="visual">
+        <geometry><sphere><radius>3.6</radius></sphere></geometry>
+        <material><ambient>0.21 0.21 0.21 1</ambient><diffuse>0.31 0.31 0.31 1</diffuse></material>
+      </visual>
+    </link>
+  </model>
+  
+  <model name="crater_11">
+    <pose>-8 -12 0.1 0 0 0</pose>
+    <static>true</static>
+    <link name="link">
+      <visual name="visual">
+        <geometry><sphere><radius>2.5</radius></sphere></geometry>
+        <material><ambient>0.16 0.16 0.16 1</ambient><diffuse>0.26 0.26 0.26 1</diffuse></material>
+      </visual>
+    </link>
+  </model>
+  
+  <model name="crater_12">
+    <pose>14 8 0.1 0 0 0</pose>
+    <static>true</static>
+    <link name="link">
+      <visual name="visual">
+        <geometry><sphere><radius>4.4</radius></sphere></geometry>
+        <material><ambient>0.24 0.24 0.24 1</ambient><diffuse>0.34 0.34 0.34 1</diffuse></material>
+      </visual>
+    </link>
+  </model>
+  
+  <model name="crater_13">
+    <pose>-14 0 0.1 0 0 0</pose>
+    <static>true</static>
+    <link name="link">
+      <visual name="visual">
+        <geometry><sphere><radius>3.4</radius></sphere></geometry>
+        <material><ambient>0.2 0.2 0.2 1</ambient><diffuse>0.3 0.3 0.3 1</diffuse></material>
+      </visual>
+    </link>
+  </model>
+  
+  <model name="crater_14">
+    <pose>0 -14 0.1 0 0 0</pose>
+    <static>true</static>
+    <link name="link">
+      <visual name="visual">
+        <geometry><sphere><radius>5.0</radius></sphere></geometry>
+        <material><ambient>0.4 0.4 0.4 1</ambient><diffuse>0.5 0.5 0.5 1</diffuse></material>
+      </visual>
+    </link>
+  </model>
+  
+  <model name="crater_15">
+    <pose>-6 10 0.1 0 0 0</pose>
+    <static>true</static>
+    <link name="link">
+      <visual name="visual">
+        <geometry><sphere><radius>3.0</radius></sphere></geometry>
+        <material><ambient>0.17 0.17 0.17 1</ambient><diffuse>0.27 0.27 0.27 1</diffuse></material>
+      </visual>
+    </link>
+  </model>
+  
+</world>
+</sdf>
