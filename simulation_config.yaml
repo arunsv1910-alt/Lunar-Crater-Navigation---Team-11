@@ -1,0 +1,104 @@
+# LUNAR ROVER SIMULATION CONFIGURATION
+# Simulation Engineer: Arun Saravana Lakshmi Venugopal
+
+simulation:
+  environment: "Gazebo Harmonic 8.10.0"
+  world_file: "worlds/lunar_crater_world.sdf"
+  duration_seconds: 100
+  realtime_factor: 1.0
+  physics_engine: "ODE"
+  
+world:
+  size: [20, 20]  # meters
+  craters: 4
+  crater_sizes: [1.5, 2.5, 1.8, 3.0]  # meters radius
+  terrain_resolution: 0.25  # m/pixel (from LRO/Chandrayaan-2)
+  
+robot:
+  model: "TurtleBot3 Waffle (simulated)"
+  drive_type: "differential"
+  sensors:
+    depth_camera:
+      type: "stereo"
+      resolution: [640, 480]
+      frame_rate: 30
+      range: [0.1, 30.0]  # meters
+    odometry:
+      drift_rate: 0.02  # 2% per meter (from proposal)
+    imu:
+      frequency: 100  # Hz
+      
+localization:
+  algorithm: "Particle Filter (ShadowNav-based)"
+  num_particles: 200
+  resampling_threshold: 0.5
+  measurement_model: "crater_landmarks"
+  
+performance:
+  target_ate: 2.0  # meters (from proposal)
+  target_improvement: 0.6  # 60% improvement
+  realtime_threshold: 0.05  # 50ms per update
+  success_criteria:
+    ate_achieved: true
+    realtime_achieved: true
+    detection_rate: 0.72
+    
+data_pipeline:
+  topics:
+    - "/gazebo/depth_camera"
+    - "/odometry/wheel_encoders"
+    - "/sensors/imu"
+    - "/perception/crater_detections"
+    - "/localization/pose_estimate"
+  update_rate: 10  # Hz
+  recording_format: "ROS 2 bag"
+  
+validation:
+  metrics:
+    - "Absolute Trajectory Error (ATE)"
+    - "Heading Error"
+    - "Computation Time"
+    - "Particle Spread"
+  comparison: "vs odometry-only baseline"
+  
+team_contributions:
+  simulation_engineer: "Arun Saravana Lakshmi Venugopal"
+  deliverables:
+    - "Gazebo lunar environment"
+    - "Sensor models and data pipeline"
+    - "Performance validation framework"
+    - "Integration-ready simulation"# Lunar Rover Simulation Configuration
+# Simulation Engineer: Arun Saravana Lakshmi Venugopal
+
+simulation:
+  world_file: "worlds/lunar_crater_world.sdf"
+  duration: 60  # seconds
+  realtime_factor: 1.0
+  
+robot:
+  model: "TurtleBot3 Waffle"
+  sensors:
+    depth_camera:
+      resolution: [640, 480]
+      fps: 30
+      range: [0.1, 30.0]  # meters
+    odometry:
+      drift_rate: 0.02  # 2% per meter
+    imu:
+      frequency: 100  # Hz
+      
+localization:
+  particle_filter:
+    num_particles: 200
+    resampling_threshold: 0.5
+  crater_detection:
+    min_diameter: 5.0  # meters
+    max_diameter: 20.0  # meters
+    detection_rate: 0.7  # 70%
+    
+performance:
+  target_ate: 2.0  # meters
+  realtime_threshold: 0.05  # 50ms
+  success_criteria:
+    ate_improvement: 0.6  # 60% improvement over odometry
+    mission_success: 0.9  # 90% waypoint accuracy
