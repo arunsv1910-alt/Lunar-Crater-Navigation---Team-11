@@ -1,0 +1,59 @@
+lunar-rover-navigation/
+│
+├── README.md                          # Main project documentation
+├── LICENSE                            # BSD-3-Clause License
+├── .gitignore                         # Git ignore file
+│
+├── worlds/                            # Gazebo world files
+│   ├── lunar_crater_world_15.sdf      # Main world with 15 craters
+│   └── lunar_crater_world.sdf         # Simple world (backup)
+│
+├── launch/                            # Launch files
+│   ├── start_simulation.sh            # Bash script to start Gazebo
+│   ├── simulation_launch.py           # ROS 2 launch file
+│   └── launch_simulation.sh           # Quick launch script
+│
+├── src/                               # ROS 2 package source
+│   └── lunar_simulation/
+│       ├── package.xml                # ROS 2 package definition
+│       ├── setup.py                   # Python package setup
+│       └── lunar_simulation/          # Python package
+│           ├── __init__.py            # Package init
+│           ├── simulation_node.py     # Main simulation node
+│           ├── crater_detector.py     # Crater detection node
+│           ├── localization_node.py   # Particle filter node
+│           └── analysis_utils.py      # Utility functions
+│
+├── scripts/                           # Analysis and utility scripts
+│   ├── analysis.py                    # Full analysis script
+│   ├── final_analysis.py              # Final presentation analysis
+│   ├── test_simulation.py             # Simulation test script
+│   ├── simple_analysis.py             # Simple analysis (backup)
+│   └── analysis_plot.py               # Plot generation
+│
+├── config/                            # Configuration files
+│   ├── simulation_config.yaml         # Main simulation config
+│   └── parameters.yaml                # ROS 2 parameters
+│
+├── results/                           # Generated results
+│   ├── simulation_results.png         # 6-panel analysis plot
+│   ├── final_presentation_results.png # 4-panel final plot
+│   ├── performance_metrics.txt        # Raw performance data
+│   ├── PROJECT_SUMMARY.md             # Project summary
+│   └── terminal_output.txt            # Sample terminal output
+│
+├── docs/                              # Documentation
+│   ├── PROPOSAL.md                    # Original project proposal
+│   ├── ARCHITECTURE.md                # System architecture
+│   ├── INSTALL.md                     # Installation guide
+│   └── PRESENTATION_GUIDE.md          # Presentation guide
+│
+├── tests/                             # Test files
+│   ├── test_simulation.py             # Simulation tests
+│   └── test_nodes.py                  # Node tests
+│
+└── screenshots/                       # Screenshots (to be added)
+    ├── gazebo_15_craters.png          # Gazebo with 15 craters
+    ├── ros2_nodes_running.png         # ROS 2 nodes in terminal
+    ├── performance_plot.png           # Performance plot
+    └── project_structure.png          # Tree output
